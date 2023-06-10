@@ -1,17 +1,41 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+ const numbers = new Set();
 
-/* 
-  Write the Big O time complexity of your function here
+  for (let num of array) {
+    const number = target - num;
+    if (numbers.has(number)) {
+      return true;
+    }
+    numbers.add(num);
+  }
+
+  return false;
+};
+/*
+  This code would need to iterate through the array n times
+  depending on the size of the array. The Big O time complexity
+  would be linear or O(n).
 */
 
 /* 
-  Add your pseudocode here
+  Declare a variable for sorting numbers
+    Iterate through each element of the array
+      Declare variable for target minus element
+      if the result is equal to a number already in Set()
+        stop process, display true
+      
+      add element to Set() if expression not true
+
+    display false if all iterations not true
 */
 
 /*
-  Add written explanation of your solution here
+  This code adds a Set() object to store the number after each 
+  false iteration. In each iteration the target is 
+  subtracted by the element of the array, after which the result is 
+  compared to the Set() object. If any numbers in the Set() match the result
+  then the expression returns true. If none match, then false is returned.
 */
 
 // You can run `node index.js` to view these console logs
